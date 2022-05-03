@@ -1,0 +1,21 @@
+sudo apt-get update 
+
+sudo apt-get install asterisk asterisk-dahdi
+
+sudo mv /etc/asterisk/sip.conf /etc/asterisk/sip.conf.b 
+
+sudo mv /etc/asterisk/extensions.conf /etc/asterisk/extensions.conf.b
+
+sudo cp ./sip.conf /etc/asterisk/sip.conf
+
+sudo cp ./extensions.conf /etc/asterisk/extensions.conf
+
+sudo chown asterisk:asterisk /etc/asterisk/sip.conf /etc/asterisk/extensions.conf 
+
+sudo chmod 640 /etc/asterisk/sip.conf /etc/asterisk/extensions.conf
+
+sudo systemctl restart asterisk 
+
+sudo systemctl status asterisk
+
+
